@@ -1,0 +1,23 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "To do List Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sulthanul Arief",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "capitalize": "^2.0.4",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "jquery": "^3.6.1",
+    "jsdom": "^20.0.2",
+    "node-localstorage": "^2.2.1",
+    "request": "^2.88.2",
+    "tape": "^5.6.1",
+    "upper-case": "^2.0.2"
+  }
+}
