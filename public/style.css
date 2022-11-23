@@ -72,6 +72,22 @@ body {
     position: absolute;
     right: 0px;
 }
+/* .btn1 {
+  
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #A683E3;
+  border-radius: 50%;
+  position: absolute;
+  right: 351px;
+} */
 input[type="checkbox"]
  {
    margin: 20px;
