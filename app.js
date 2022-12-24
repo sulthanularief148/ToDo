@@ -22,6 +22,17 @@ async function main(db, err) {
 
 };
 
+/*Description:
+We have to create todo list 
+Collection
+1.List
+2.routeModel
+
+
+
+
+
+*/
 
 //Created List Items Schema
 const listItemSchema = {
@@ -33,6 +44,7 @@ const listItemSchema = {
 
 //Create new list Model "List" is collection of "todolistDb". Home route
 const List = mongoose.model("List", listItemSchema);
+//New list Static content.
 const welcome = new List({
   name: "Welcome to the todo list!"
 });
@@ -58,6 +70,14 @@ const routeModel = mongoose.model("route", routeSchema);
 
 
 //Home section
+
+/*
+Below code refer to if List collection contains foundItems(FoundItems is a callback function.) then i checked if FoundItems length is empty
+It will automatically add the static data into the List collection.Static data means [allData].After the static data added into the page
+it will automaically redirected to home route.
+
+Otherwise My List items is note empty, it will go and render list page and found the listTitle , newListItems to diaplay the Homepage.
+*/
 app.get("/", function (req, res) {
   List.find({}, function (err, founditems) {
     if (founditems.length === 0) {
@@ -79,7 +99,7 @@ app.get("/", function (req, res) {
 });
 
 
-//Below code is refer to we can create dynamic routein for user friendly
+//Below code is refer to we can create dynamic route in for user friendly
 app.get("/:customList", function (req, res) {
   const requestedTitle = _.capitalize(req.params.customList);
   console.log(requestedTitle);
@@ -110,37 +130,6 @@ app.get("/:customList", function (req, res) {
 
 });
 
-
-
-
-//Post the new list item to the Hmoe route
-// app.post("/", function (req, res) {
-//   let itemName = req.body.addList;
-//   let itemLen = req.body.addList.length;
-//   let item = itemName.slice(0, 1).toUpperCase() + itemName.slice(1, itemLen).toLowerCase();
-
-//   let listName = req.body.list;
-//   const NewItem = new List({
-//     name: item
-//   });
-
-
-//   if (listName === "Today") {
-//     NewItem.save();
-//     res.redirect("/");
-//   } else {
-//     routeModel.findOne({
-//       name: listName
-//     }, function (err, foundItem) {
-//       console.log("foundItem: " + foundItem);
-//       foundItem.listItems.push(NewItem);
-//       foundItem.save();
-//       res.redirectt("/" + listName);
-//     });
-//   }
-
-
-// });
 
 // List.deleteMany({
 //   allData
